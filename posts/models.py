@@ -2,6 +2,7 @@ from django.db import models
 from django.contrib.auth import get_user_model
 from django.urls import reverse
 
+
 class Post(models.Model):
     title = models.CharField(max_length=128)
     subtitle = models.CharField(max_length=128)
@@ -11,7 +12,7 @@ class Post(models.Model):
     )
     body = models.TextField()
     created_on = models.DateTimeField(auto_now_add=True)
-
+    active = models.BooleanField(default=False)
 
     def __str__(self):
         return self.title
